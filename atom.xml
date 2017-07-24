@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>花碳_NaYo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-07-23T15:04:18.163Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>love 花糖</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="http://yoursite.com/2017/07/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://yoursite.com/2017/07/23/数据结构/</id>
+    <published>2017-07-23T15:03:36.269Z</published>
+    <updated>2017-07-23T15:04:18.163Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><ul>
+<li>线性表<blockquote>
+<p>  #define LIST_INIT_SIZE  100 //线性表存储空间的初始分配量<br>  #define LISTINCREMENT   10  //线性表存储空间的分配增量<br>  typedef struct{<br>  ElemType *elem; //存储空间基址<br>  int length;<br>  int listsize;<br>  }SqList;</p>
+</blockquote>
+</li>
+<li>线性链表<a id="more"></a>
+<blockquote>
+<p>  typedef struct LNode{<br>  ElemType    data;<br>  struct LNode    <em>next;<br>  }LNode, </em>LinkList;</p>
+</blockquote>
+</li>
+<li>静态链表<blockquote>
+<p>  #define MAX_SIZE    1 000 //链表最大长度<br>  typedef struct{</p>
+<pre><code>ElemType data;
+int     cur;
+</code></pre><p>  }component, SLinkList[MAX_SIZE];</p>
+</blockquote>
+</li>
+<li>循环链表</li>
+<li>双向链表<blockquote>
+<p>  typedef struct DuLNode{</p>
+<pre><code>ElemType data;
+struct DuLNode  *prior;
+struct DuLNode  *next;
+</code></pre><p>  }DuLNode, *DuLinkList;</p>
+<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h1></blockquote>
+</li>
+<li>栈<blockquote>
+<p>  typedef struct{</p>
+<pre><code>SElemType *base;
+SElemType *top;
+int stacksize;  //表示栈当前可使用的最大容量
+</code></pre><p>  }SqStack;</p>
+</blockquote>
+</li>
+<li>队列<blockquote>
+<p>  typedef struct {</p>
+<pre><code>QElemType   data;
+struct  QNode *next;
+</code></pre><p>  }QNode,*QueuePtr;<br>  typedef struct{</p>
+<pre><code>QueuePtr *front;
+QueuePtr *rear;
+</code></pre><p>  }LinkQueue;</p>
+</blockquote>
+</li>
+<li>循环队列<blockquote>
+<p>  typedef struct{</p>
+<pre><code>QElemType *base;  //初始化的动态内存分配空间
+int     front;  //头指针
+int     rear;   //尾指针
+</code></pre><p>  }SqQueue;</p>
+<h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1></blockquote>
+</li>
+<li></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;线性表&lt;blockquote&gt;
+&lt;p&gt;  #define LIST_INIT_SIZE  100 //线性表存储空间的初始分配量&lt;br&gt;  #define LISTINCREMENT   10  //线性表存储空间的分配增量&lt;br&gt;  typedef struct{&lt;br&gt;  ElemType *elem; //存储空间基址&lt;br&gt;  int length;&lt;br&gt;  int listsize;&lt;br&gt;  }SqList;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;线性链表
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>c++</title>
+    <link href="http://yoursite.com/2017/07/22/C++%E7%B1%BB%E6%88%90%E5%91%98%E5%92%8C%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/07/22/C++类成员和数据成员初始化总结/</id>
+    <published>2017-07-22T14:28:53.357Z</published>
+    <updated>2017-07-23T14:24:04.504Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="C-类成员和数据成员初始化总结"><a href="#C-类成员和数据成员初始化总结" class="headerlink" title="C++类成员和数据成员初始化总结"></a>C++类成员和数据成员初始化总结</h1><hr>
+<blockquote>
+<p>C++为类中提供类成员的初始化列表</p>
+</blockquote>
+<p>类对象的构造顺序是这样的：</p>
+<pre><code>1.分配内存，调用构造函数时，隐式／显示的初始化各数据成员
+
+2.进入构造函数后在构造函数中执行一般计算
+</code></pre><a id="more"></a>
+<blockquote>
+<p>  1.类里面的任何成员变量在定义时是不能初始化的。</p>
+</blockquote>
+<p>  2.一般的数据成员可以在构造函数中初始化。</p>
+<p>  3.const数据成员必须在构造函数的初始化列表中初始化。</p>
+<p>  4.static要在类的定义外面初始化。   </p>
+<p>  5.数组成员是不能在初始化列表里初始化的。</p>
+<h2 id="6-不能给数组指定明显的初始化。"><a href="#6-不能给数组指定明显的初始化。" class="headerlink" title="  6.不能给数组指定明显的初始化。  "></a>  6.不能给数组指定明显的初始化。  </h2><h2 id="C-里面是不能定义常量数组的！-C-里面是不能定义常量数组的！"><a href="#C-里面是不能定义常量数组的！-C-里面是不能定义常量数组的！" class="headerlink" title="C++里面是不能定义常量数组的！(C++里面是不能定义常量数组的！)"></a>C++里面是不能定义常量数组的！(C++里面是不能定义常量数组的！)</h2><blockquote>
+<p>初始化列表：</p>
+</blockquote>
+<p>  1.CSomeClass::CSomeClass() : x(0), y(1){};</p>
+<p>  2.类外初始化：int CSomeClass::myVar=3;</p>
+<p>  3.const常量定义必须初始化，C++类里面使用初始化列表;</p>
+<p>  4.C++类不能定义常量数组。</p>
+<hr>
+<blockquote>
+<p>在C++类中，必须做如下事情：</p>
+</blockquote>
+<p>1.必须对任何const或引用类型成员以及没有默认构造函数的 类 类型 的任何成员 显示地使用初始化列表进行初始化</p>
+<p>2.类成员在定义时是不能被初始化的。</p>
+<p>3.类的成员初始化顺序与成员变量在构造函数中的位置选后顺序无关，至于成员变量在类中定义的先后顺序有关。</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;C-类成员和数据成员初始化总结&quot;&gt;&lt;a href=&quot;#C-类成员和数据成员初始化总结&quot; class=&quot;headerlink&quot; title=&quot;C++类成员和数据成员初始化总结&quot;&gt;&lt;/a&gt;C++类成员和数据成员初始化总结&lt;/h1&gt;&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C++为类中提供类成员的初始化列表&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;类对象的构造顺序是这样的：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.分配内存，调用构造函数时，隐式／显示的初始化各数据成员
+
+2.进入构造函数后在构造函数中执行一般计算
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
